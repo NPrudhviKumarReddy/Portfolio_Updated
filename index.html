@@ -1,540 +1,1155 @@
 <!DOCTYPE html>
 <html lang="en-AU" data-theme="dark">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>N Prudhvi Kumar Reddy | Software Engineer – Web, IoT & Data</title>
+  <title>Prudhvi Kumar Reddy Nandyala | Software Engineer • BI • IoT • Patent Holder</title>
+  <meta name="description" content="Software Engineer & Patent Holder (Melbourne). Angular/TypeScript, Node.js, Java Spring Boot microservices, OpenShift, CI/CD, Power BI (DAX/ETL). Building performant, accessible systems and analytics dashboards." />
 
-    <meta name="description"
-        content="Software Engineer with 3.5+ years of experience in Web, IoT and Data-Driven Solutions. Ex-Cognizant, BI Consultant, Founder at Innovarian Tech Solutions.">
+  <link rel="canonical" href="https://www.nprudhvikumarreddy.com/" />
 
-    <!-- OpenGraph -->
-    <meta property="og:title" content="N Prudhvi Kumar Reddy | Software Engineer">
-    <meta property="og:description" content="Web, IoT & Data-Driven Solutions | Ex-Cognizant | BI Consultant">
-    <meta property="og:type" content="website">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
 
-    <!-- Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
-        rel="stylesheet">
+  <!-- Bootstrap + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="./style.css" />
 
-
-    <style>
-        /* ================= THEME ================= */
-        :root {
-            --bg: #0b0f1a;
-            --bg-soft: #11162a;
-            --card: rgba(255, 255, 255, .06);
-            --text: #e5e7eb;
-            --muted: #9ca3af;
-            --accent: #38bdf8;
-            --accent2: #22d3ee;
-            --border: rgba(255, 255, 255, .12);
-        }
-
-        [data-theme="light"] {
-            --bg: #f8fafc;
-            --bg-soft: #eef2ff;
-            --card: rgba(255, 255, 255, .9);
-            --text: #0f172a;
-            --muted: #475569;
-            --accent: #2563eb;
-            --accent2: #06b6d4;
-            --border: rgba(0, 0, 0, .1);
-        }
-
-        body {
-            font-family: Inter, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
-
-
-        h1,
-        h2,
-        h5 {
-            font-weight: 700
-        }
-
-        .section-title {
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 30px
-        }
-
-        /* Background grid */
-        .bg-grid {
-            position: fixed;
-            inset: 0;
-            background:
-                linear-gradient(to right, rgba(255, 255, 255, .05) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, .05) 1px, transparent 1px);
-            background-size: 60px 60px;
-            z-index: -1;
-        }
-
-        /* ================= SECTIONS ================= */
-        section {
-            padding: 100px 0
-        }
-
-        .section-title {
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 40px;
-        }
-
-        .section::before {
-            content: "";
-            width: 140px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent), transparent);
-            display: block;
-            margin-bottom: 20px;
-        }
-
-        /* Glass */
-        .glass {
-            background: var(--card);
-            border: 1px solid var(--border);
-            backdrop-filter: blur(14px);
-            border-radius: 16px;
-            padding: 30px;
-            transition: .4s;
-            margin-bottom: 24px;
-        }
-
-        .glass:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 0 35px rgba(56, 189, 248, .25);
-        }
-
-        /* ================= PROJECTS ================= */
-        .tech-tags span {
-            font-size: .75rem;
-            padding: 4px 10px;
-            border-radius: 20px;
-            background: rgba(56, 189, 248, .18);
-            margin-right: 6px;
-        }
-
-        .project-links a {
-            margin-right: 12px;
-            font-weight: 600;
-            color: var(--accent);
-        }
-
-        /* ================= REVEAL ================= */
-        .reveal {
-            opacity: 0;
-            transform: translateY(50px) scale(.97);
-            transition: 1s ease;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: none;
-        }
-
-        .text-muted {
-            color: var(--muted) !important;
-            opacity: 0.95;
-        }
-
-        /* Navbar */
-        .navbar {
-            background: rgba(0, 0, 0, .45);
-            backdrop-filter: blur(14px)
-        }
-
-        .nav-link {
-            color: var(--text) !important
-        }
-
-        /* Hero */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            text-align: center
-        }
-
-        .hero .role {
-            font-family: JetBrains Mono, monospace;
-            color: var(--accent)
-        }
-
-        a:focus, button:focus {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
-
-        /* Reveal
-.reveal{opacity:0;transform:translateY(40px);transition:1s}
-.reveal.active{opacity:1;transform:none} */
-
-        /* Footer */
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 30px;
-            text-align: center;
-            color: var(--muted)
-        }
-
-
-
-
-    /* ================= LIGHT THEME – TECH DATA BACKGROUND ================= */
-[data-theme="light"] body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: -2;
-
-  /* Subtle tech node pattern */
-  background-image:
-    radial-gradient(circle at 1px 1px, rgba(37,99,235,0.08) 1px, transparent 0);
-  background-size: 32px 32px;
-}
-
-/* AI / cloud gradient waves */
-[data-theme="light"] body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: -1;
-
-  background:
-    radial-gradient(circle at 20% 25%, rgba(37,99,235,0.14), transparent 45%),
-    radial-gradient(circle at 80% 30%, rgba(6,182,212,0.12), transparent 50%),
-    radial-gradient(circle at 50% 80%, rgba(37,99,235,0.10), transparent 55%);
-}
-    
-    </style>
+  <!-- Schema (Person) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Prudhvi Kumar Reddy Nandyala",
+    "jobTitle": "Software Engineer",
+    "address": { "@type": "PostalAddress", "addressLocality": "Melbourne", "addressRegion": "VIC", "addressCountry": "AU" },
+    "email": "mailto:nandyalaprudhvi5@gmail.com",
+    "url": "https://www.nprudhvikumarreddy.com/",
+    "sameAs": ["https://www.linkedin.com/in/nprudhvikumarreddy/"]
+  }
+  </script>
 </head>
 
 <body>
-    <div class="bg-grid"></div>
+  <!-- Premium background -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-aurora" aria-hidden="true"></div>
 
-    <!-- NAV -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg fixed-top nav-glass" aria-label="Primary navigation">
+    <div class="container">
+      <a class="navbar-brand brand" href="#top" aria-label="Go to top">
+        <span class="brand-dot"></span>
+        <span class="brand-colour">Prudhvi</span>
+      </a>
 
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#">Prudhvi</a>
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
-                <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
+              aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3 mt-3 mt-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#impact">Impact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#command">Command</a></li>
+          <li class="nav-item"><a class="nav-link" href="#systems">System Map</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#patents">Patents</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+
+          <li class="nav-item ms-lg-2 d-flex gap-2">
+            <a class="btn btn-sm btn-outline-soft" href="./resume.pdf" download>
+              <i class="fa-solid fa-file-arrow-down me-2"></i>Resume
+            </a>
+            <a class="btn btn-sm btn-outline-soft" href="https://www.linkedin.com/in/nprudhvikumarreddy/" target="_blank" rel="noopener">
+              <i class="fa-brands fa-linkedin me-2"></i>LinkedIn
+            </a>
+            <button class="btn btn-sm btn-outline-soft" type="button" onclick="toggleTheme()" aria-label="Toggle theme">
+              <span id="themeIcon" aria-hidden="true">🌗</span>
             </button>
-            <div id="nav" class="collapse navbar-collapse">
-                <ul class="navbar-nav ms-auto gap-3">
-                    <li><a class="nav-link" href="#about">About</a></li>
-                    <li><a class="nav-link" href="#experience">Experience</a></li>
-                    <li><a class="nav-link" href="#skills">Skills</a></li>
-                    <li><a class="nav-link" href="#projects">Projects</a></li>
-                    <li><a class="nav-link" href="#education">Education</a></li>
-                    <li><a class="nav-link" href="#contact">Contact</a></li>
-                    <li>
-                        <button class="btn btn-sm btn-outline-info" onclick="toggleTheme()">🌗</button>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <!-- HERO -->
-    <section class="hero reveal">
-        <div class="container">
-            <span class="badge bg-info text-dark mb-3">Available for Roles & Freelance</span>
-            <h1 class="mt-3">N Prudhvi Kumar Reddy</h1>
-            <p class="role mt-3">
-                Software Engineer | Patent Holder | Web, IoT & Data-Driven Solutions
+  <!-- HERO -->
+  <header id="top" class="hero">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7">
+          <div class="pill mb-3">
+            <span class="dot"></span>
+            Available for roles • Melbourne, VIC
+          </div>
+
+          <h1 class="hero-title">
+            Prudhvi Kumar Reddy <span class="text-gradient">Nandyala</span>
+          </h1>
+
+          <p class="hero-sub mt-3">
+            <span class="mono">Software Engineer</span> • <span class="mono">BI</span> • <span class="mono">IoT/AI</span> •
+            <span class="mono">Patent Holder</span>
+          </p>
+
+          <p class="lead mt-3 text-muted-soft">
+            I build <strong>high-performance web apps</strong>, <strong>scalable APIs & microservices</strong>,
+            <strong>CI/CD-ready deployments</strong>, and <strong>analytics dashboards</strong> — turning complex requirements into reliable products.
+          </p>
+
+          <div class="d-flex flex-wrap gap-2 mt-4">
+            <a class="btn btn-primary btn-glow" href="#projects">
+              View Projects <i class="fa-solid fa-arrow-right ms-2"></i>
+            </a>
+            <a class="btn btn-outline-soft" href="./resume.pdf" download>
+              Download Resume
+            </a>
+            <button class="btn btn-outline-soft" type="button" onclick="copyEmail()">
+              <i class="fa-regular fa-copy me-2"></i>Copy Email
+            </button>
+          </div>
+
+          <div class="mini-tech mt-4">
+            <span class="chip">Angular</span>
+            <span class="chip">TypeScript</span>
+            <span class="chip">Node.js</span>
+            <span class="chip">Java • Spring Boot</span>
+            <span class="chip">OpenShift</span>
+            <span class="chip">Power BI</span>
+          </div>
+
+          <p class="mt-3 text-muted-soft small mb-0" id="copyToast" aria-live="polite"></p>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="card-glass hero-card reveal">
+            <div class="d-flex align-items-start justify-content-between">
+              <div>
+                <p class="mb-1 text-muted-soft">Signature strengths</p>
+                <h2 class="h5 mb-0">Engineering + Delivery + Data</h2>
+              </div>
+              <div class="badge-soft">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+              </div>
+            </div>
+
+            <div class="mt-4 grid-2">
+              <div class="stat">
+                <div class="stat-num">3.5+</div>
+                <div class="stat-label">Years experience</div>
+              </div>
+              <div class="stat">
+                <div class="stat-num">15+</div>
+                <div class="stat-label">Projects delivered</div>
+              </div>
+              <div class="stat">
+                <div class="stat-num">1</div>
+                <div class="stat-label">Granted patent</div>
+              </div>
+              <div class="stat">
+                <div class="stat-num">2</div>
+                <div class="stat-label">Journal publications</div>
+              </div>
+            </div>
+
+            <hr class="soft-hr my-4" />
+
+            <div class="d-flex align-items-center justify-content-between">
+              <div>
+                <p class="mb-1 text-muted-soft">Currently focused on</p>
+                <p class="mb-0">Performance • Accessibility • Scalable Systems</p>
+              </div>
+              <a class="link-soft" href="#contact">Let’s talk</a>
+            </div>
+          </div>
+
+          <div class="hero-orbit" aria-hidden="true">
+            <div class="ring r1"></div>
+            <div class="ring r2"></div>
+            <div class="ring r3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a class="scroll-hint" href="#about" aria-label="Scroll to About section">
+      <span class="mouse"></span>
+      <span class="text-muted-soft small">Scroll</span>
+    </a>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">About</h2>
+        <p class="section-sub text-muted-soft">A blend of software engineering, analytics, and innovation.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="card-glass reveal">
+            <p class="mb-3">
+              I’m a <strong>Software Engineer</strong> who ships real systems end-to-end: UI, APIs, services, deployments,
+              and dashboards. I’ve led small agile teams, improved delivery velocity, and built reliable releases in client-facing environments.
             </p>
-            <p class="mt-3">
-                Building scalable, secure and business-aligned technology solutions.
+            <p class="mb-0">
+              With a <strong>Master of Business Information Systems</strong>, I align engineering decisions to outcomes:
+              clean architecture, measurable performance, and user-centric design.
             </p>
-            <a href="resume.pdf" class="btn btn-info btn-lg mt-3" download>Download Resume</a>
+          </div>
         </div>
-    </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="section reveal">
-        <div class="container">
-            <h2 class="section-title">About</h2>
-            <div class="glass">
-                <p>
-                    Software Engineer with over <strong>3.5 years of professional experience</strong>
-                    across software development, business intelligence, and client-focused solution delivery.
-                </p>
-                <p>
-                    I hold a <strong>Master of Business Information Systems</strong> from
-                    <strong>La Trobe University, Melbourne</strong>, completed in <strong>2025</strong>.
-                    My background blends strong engineering fundamentals with business and data-driven thinking.
-                </p>
-                <p>
-                    Experienced in delivering enterprise web applications, IoT platforms, analytics dashboards,
-                    and scalable backend systems, working closely with stakeholders to convert complex requirements
-                    into reliable, user-centric solutions. I am passionate about innovation, research, and designing
-                    systems that are built to scale.
-                </p>
-            </div>
+        <div class="col-lg-5">
+          <div class="card-glass reveal">
+            <h3 class="h6 text-muted-soft mb-3">Highlights</h3>
+            <ul class="list-unstyled mb-0 bullets">
+              <li><i class="fa-solid fa-bolt"></i> Performance optimisation & UI engineering</li>
+              <li><i class="fa-solid fa-universal-access"></i> Accessibility-first development (WCAG-aware)</li>
+              <li><i class="fa-solid fa-diagram-project"></i> APIs, microservices & integrations</li>
+              <li><i class="fa-solid fa-chart-line"></i> BI dashboards, ETL & analytics</li>
+              <li><i class="fa-solid fa-certificate"></i> Patents & research-grade innovation</li>
+            </ul>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience" class="reveal">
-        <div class="container">
-            <h2 class="section-title">Experience</h2>
-
-            <div class="glass">
-                <h5>Associate – Lead</h5>
-                <p class="text-muted">Cognizant Technology Services | Feb 2021 – Jun 2023</p>
-                <ul>
-                    <li>Led a 3–4 member frontend team, improving sprint velocity by 20%</li>
-                    <li>Developed accessible Angular (8+) applications aligned with WCAG standards</li>
-                    <li>Reduced page load times by 35% through UI optimisation</li>
-                    <li>Automated API testing with Node.js & Cypress, increasing coverage by 85%</li>
-                    <li>Built RESTful microservices using Java, Spring Boot & MySQL</li>
-                    <li> Worked with <strong>Red Hat OpenShift</strong> to support CI/CD pipelines, monitor deployments,
-                        and manage microservices across environments.</li>
-                </ul>
-            </div>
-
-            <div class="glass">
-                <h5>Business Intelligence Consultant – Lead</h5>
-                <p class="text-muted">La Trobe Business Intelligence Consulting | Aug 2024 – Jun 2025</p>
-                <ul>
-                    <li>Designed Power BI dashboards for enterprise decision-making</li>
-                    <li>Developed ETL pipelines and advanced DAX measures</li>
-                    <li>Supported KPI tracking, forecasting and analytics initiatives</li>
-                </ul>
-            </div>
-
-            <div class="glass">
-                <h5>Founder & Developer</h5>
-                <p class="text-muted">Innovarian Tech Solutions | Apr 2018 – Present</p>
-                <ul>
-                    <li>Founded and led a 6-member team delivering 15+ IoT & AI/ML projects</li>
-                    <li>Designed systems from embedded firmware to cloud dashboards</li>
-                    <li>Improved automation efficiency by up to 40%</li>
-                </ul>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="reveal">
-        <div class="container">
-            <h2 class="section-title">Skills</h2>
-            <div class="row g-3">
-                <div class="col-md-3">
-                    <div class="glass text-center">Angular, JavaScript, TypeScript</div>
-                </div>
-                <div class="col-md-3">
-                    <div class="glass text-center">Node.js, Java, Spring Boot</div>
-                </div>
-                <div class="col-md-3">
-                    <div class="glass text-center">MySQL, MongoDB</div>
-                </div>
-                <div class="col-md-3">
-                    <div class="glass text-center">Power BI, IBM Cognos</div>
-                </div>
-                <div class="col-md-3">
-                    <div class="glass text-center">Agile, Scrum, JIRA</div>
-                </div>
-                <div class="col-md-3">
-                    <div class="glass text-center">GitLab CI/CD, OpenShift</div>
-                </div>
-                <div class="col-md-3">
-                    <div class="glass text-center">API & Microservices</div>
-                </div>
-                <div class="col-md-3">
-                    <div class="glass text-center">UI/UX & Accessibility</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="reveal">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-
-            <div class="glass">
-                <h5 class="d-flex">UAV Defence Technology System <div class="tech-tags ms-2">
-                    <span>Granted Patent</span> 
-                </div></h5>
-                <p>AI/ML-powered UAV achieving 95% detection accuracy for landmines and persons of interest, with
-                    real-time location tracking.</p>
-    
-                <div class="tech-tags">
-                    <span>AI</span><span>Machine Learning</span><span>UAV</span>
-                </div>
-            </div>
-
-            <div class="glass">
-                <h5>Voice-Induced Home Modulation</h5>
-                <p>IoT-based home automation system using voice control and power line transmission, improving energy
-                    efficiency by 35%.</p>
-                <div class="tech-tags">
-                    <span>IoT</span><span>Embedded Systems</span><span>Automation</span>
-                </div>
-            </div>
-
-
-            <div class="glass">
-                <h5>Speech-Induced Printer (Robotic Pen)</h5>
-                <p>AI-based handwriting system with 98% speech-to-text accuracy.</p>
-                <div class="tech-tags">
-                    <span>AI</span><span>Speech Processing</span><span>Robotics</span>
-                </div>
-            </div>
-
-            <div class="glass">
-                <h5>Smart Home Automation System</h5>
-                <p>Sensor-based IoT solution increasing energy efficiency by 45%.</p>
-                <div class="tech-tags">
-                    <span>IoT</span><span>Sensors</span><span>Embedded Systems</span><span>Automation</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PATENTS & PUBLICATIONS -->
-<section id="patents" class="section reveal">
+  <!-- IMPACT -->
+<section id="impact" class="section section-alt">
   <div class="container">
-    <h2 class="section-title">Patents & Publications</h2>
-
-    <!-- Granted Patent -->
-    <div class="glass">
-      <h5>Granted Patent</h5>
-      <p>
-        <strong>System and Method to Identify Accurate Location of Explosive Devices</strong>
-      </p>
-      <p>
-        A patented system designed to accurately identify and locate explosive devices,
-        leveraging advanced detection and tracking mechanisms to improve safety and response efficiency.
-      </p>
-      <p class="text-muted">
-        Patent No.: <strong>409989</strong> · Status: Granted
-      </p>
-      <p class="text-muted">
-Domains: Security Systems Engineering · Explosive Detection Systems · Embedded Systems ·
-Sensor-Based Detection · Real-Time Location & Tracking · Safety-Critical Systems
-</p>
-
-    </div>
-
-    <!-- Patent Journal Publications -->
-    <div class="glass">
-      <h5>Official Patent Journal Publications</h5>
-
-      <ul>
-        <li>
-          <strong>System for Voice Induced Home Modulation</strong><br>
-          An IoT-based home automation system enabling voice-controlled operation of electrical
-          appliances, with emphasis on energy efficiency and accessibility.<br>
-          <span class="text-muted">
-            Application No.: <strong>201841045161A</strong>
-          </span>
-        </li>
-        <br>
-        <li>
-          <strong>Robotic Pen</strong><br>
-          A speech-to-text robotic system capable of converting spoken input into written
-          output with high accuracy, improving accessibility through automation.<br>
-          <span class="text-muted">
-            Application No.: <strong>202041038885A</strong>
-          </span>
-        </li>
-      </ul>
-
-      <p class="text-muted">
-        Domains: IoT · Artificial Intelligence · Embedded Systems · Automation · Robotics
+    <div class="section-head">
+      <h2 class="section-title">Impact</h2>
+      <p class="section-sub text-muted-soft">
+        A snapshot of how I deliver across engineering, analytics, and innovation — not limited to one role.
       </p>
     </div>
 
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="impact-card reveal">
+          <div class="impact-ico"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <div class="impact-title">Frontend Engineering</div>
+          <div class="impact-proof">Performance-first UI + reusable components + accessibility mindset.</div>
+          <div class="impact-tags"><span>Angular</span><span>TypeScript</span><span>WCAG</span></div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="impact-card reveal">
+          <div class="impact-ico"><i class="fa-solid fa-diagram-project"></i></div>
+          <div class="impact-title">Backend & APIs</div>
+          <div class="impact-proof">RESTful services, integrations, modular architecture thinking.</div>
+          <div class="impact-tags"><span>Node.js</span><span>Java</span><span>Spring Boot</span></div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="impact-card reveal">
+          <div class="impact-ico"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="impact-title">Testing & Quality</div>
+          <div class="impact-proof">Automation mindset: API/E2E testing + release stability.</div>
+          <div class="impact-tags"><span>Postman</span><span>Cypress</span><span>QA</span></div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="impact-card reveal">
+          <div class="impact-ico"><i class="fa-solid fa-gears"></i></div>
+          <div class="impact-title">CI/CD & Deployments</div>
+          <div class="impact-proof">Pipeline-aware delivery with environments & monitoring exposure.</div>
+          <div class="impact-tags"><span>GitLab CI</span><span>OpenShift</span><span>Release</span></div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="impact-card reveal">
+          <div class="impact-ico"><i class="fa-solid fa-chart-line"></i></div>
+          <div class="impact-title">BI & Analytics</div>
+          <div class="impact-proof">Dashboards for KPIs, forecasting, and leadership reporting.</div>
+          <div class="impact-tags"><span>Power BI</span><span>DAX</span><span>ETL</span></div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="impact-card reveal">
+          <div class="impact-ico"><i class="fa-solid fa-database"></i></div>
+          <div class="impact-title">Data Foundations</div>
+          <div class="impact-proof">Data modelling basics, sources, refresh, and correctness focus.</div>
+          <div class="impact-tags"><span>MySQL</span><span>MongoDB</span><span>Model</span></div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="impact-card reveal">
+          <div class="impact-ico"><i class="fa-solid fa-people-group"></i></div>
+          <div class="impact-title">Leadership</div>
+          <div class="impact-proof">Led small teams, aligned tasks, delivered sprint outcomes.</div>
+          <div class="impact-tags"><span>Agile</span><span>Ownership</span><span>Mentoring</span></div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="impact-card reveal">
+          <div class="impact-ico"><i class="fa-solid fa-certificate"></i></div>
+          <div class="impact-title">Innovation</div>
+          <div class="impact-proof">Granted patent + publications across IoT, robotics & applied ML.</div>
+          <div class="impact-tags"><span>Patent</span><span>IoT</span><span>AI/ML</span></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 
-    <!-- EDUCATION -->
-    <section id="education" class="reveal">
-        <div class="container">
-            <h2 class="section-title">Education</h2>
 
-            <div class="glass">
-                <h5>Master of Business Information Systems</h5>
-                <p class="text-muted">La Trobe University, Melbourne | 2023 – 2025</p>
-                <p>
-                    Focused on bridging technology and business through coursework in
-                    business analytics, enterprise systems, data-driven decision-making,
-                    and IT project management.
-                </p>
+  <!-- COMMAND CENTER (Premium) -->
+  <section id="command" class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Command Center</h2>
+          <p class="section-sub text-muted-soft">
+            Type commands like <span class="mono">skills</span>, <span class="mono">experience</span>,
+            <span class="mono">patents</span>, <span class="mono">projects</span>, <span class="mono">contact</span>.
+          </p>
+        </div>
+
+        <div class="d-flex gap-2">
+          <button class="btn btn-outline-soft btn-sm" type="button" onclick="terminalRun('help')">
+            <i class="fa-solid fa-wand-magic-sparkles me-2"></i>Demo
+          </button>
+          <button class="btn btn-outline-soft btn-sm" type="button" onclick="clearTerminal()">
+            <i class="fa-solid fa-broom me-2"></i>Clear
+          </button>
+        </div>
+      </div>
+
+      <div class="cmd-shell reveal">
+        <div class="cmd-header">
+          <div class="cmd-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="cmd-title mono">prudhvi@portfolio • command-center</div>
+          <div class="cmd-right">
+            <span class="cmd-badge mono">Press / to focus</span>
+          </div>
+        </div>
+
+        <div class="cmd-body">
+          <div class="cmd-side">
+            <div class="cmd-side-title">Quick commands</div>
+            <button class="cmd-chip" type="button" onclick="terminalRun('whoami')">whoami</button>
+            <button class="cmd-chip" type="button" onclick="terminalRun('skills')">skills</button>
+            <button class="cmd-chip" type="button" onclick="terminalRun('experience')">experience</button>
+            <button class="cmd-chip" type="button" onclick="terminalRun('patents')">patents</button>
+            <button class="cmd-chip" type="button" onclick="terminalRun('projects')">projects</button>
+            <button class="cmd-chip" type="button" onclick="terminalRun('contact')">contact</button>
+
+          </div>
+
+          <div class="cmd-main">
+            <div id="terminalBody" class="terminal-log mono" role="log" aria-live="polite"></div>
+
+            <form class="terminal-inputbar" onsubmit="event.preventDefault(); handleCommand();">
+              <span class="mono prompt">❯</span>
+              <input id="terminalCmd" class="mono terminal-input" type="text" autocomplete="off" spellcheck="false"
+                     placeholder="Type a command (try: help)" aria-label="Terminal command input" />
+              <button class="btn btn-primary btn-sm btn-glow" type="submit">
+                Run <i class="fa-solid fa-arrow-right ms-2"></i>
+              </button>
+            </form>
+
+            <div class="terminal-footer text-muted-soft small">
+              Examples: <span class="mono">skills</span>, <span class="mono">experience</span>, <span class="mono">patents</span>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SYSTEM MAP (Premium) -->
+  <section id="systems" class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">System Map</h2>
+          <p class="section-sub text-muted-soft">
+            How I connect end-to-end delivery: UI → APIs → services → data → CI/CD → analytics → innovation.
+          </p>
+        </div>
+      </div>
+
+      <div class="system-panel reveal">
+        <div class="system-grid">
+          <div class="sys-node">
+            <div class="sys-ico"><i class="fa-solid fa-display"></i></div>
+            <div class="sys-title">Frontend</div>
+            <div class="sys-sub">Angular • TypeScript • WCAG</div>
+            <div class="sys-tags">
+              <span>Performance</span><span>Reusable UI</span><span>Accessibility</span>
+            </div>
+          </div>
+
+          <div class="sys-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right-long"></i></div>
+
+          <div class="sys-node">
+            <div class="sys-ico"><i class="fa-solid fa-layer-group"></i></div>
+            <div class="sys-title">API Layer</div>
+            <div class="sys-sub">Node.js • REST • Integration</div>
+            <div class="sys-tags">
+              <span>Testing</span><span>Automation</span><span>Reliability</span>
+            </div>
+          </div>
+
+          <div class="sys-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right-long"></i></div>
+
+          <div class="sys-node">
+            <div class="sys-ico"><i class="fa-solid fa-cubes"></i></div>
+            <div class="sys-title">Microservices</div>
+            <div class="sys-sub">Java • Spring Boot</div>
+            <div class="sys-tags">
+              <span>Modular</span><span>Scalable</span><span>Deployable</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="system-grid system-grid-2 mt-3">
+          <div class="sys-node">
+            <div class="sys-ico"><i class="fa-solid fa-database"></i></div>
+            <div class="sys-title">Data</div>
+            <div class="sys-sub">MySQL • MongoDB • ETL</div>
+            <div class="sys-tags">
+              <span>Quality</span><span>Refresh</span><span>Sources</span>
+            </div>
+          </div>
+
+          <div class="sys-bridge" aria-hidden="true">
+            <div class="bridge-line"></div>
+            <div class="bridge-dot"></div>
+            <div class="bridge-dot"></div>
+            <div class="bridge-dot"></div>
+          </div>
+
+          <div class="sys-node">
+            <div class="sys-ico"><i class="fa-solid fa-gears"></i></div>
+            <div class="sys-title">DevOps</div>
+            <div class="sys-sub">GitLab CI/CD • OpenShift</div>
+            <div class="sys-tags">
+              <span>Pipelines</span><span>Environments</span><span>Observability</span>
+            </div>
+          </div>
+
+          <div class="sys-node">
+            <div class="sys-ico"><i class="fa-solid fa-chart-line"></i></div>
+            <div class="sys-title">BI & Analytics</div>
+            <div class="sys-sub">Power BI • DAX • KPI</div>
+            <div class="sys-tags">
+              <span>Dashboards</span><span>Forecasting</span><span>Decisioning</span>
+            </div>
+          </div>
+
+          <div class="sys-node sys-highlight">
+            <div class="sys-ico"><i class="fa-solid fa-certificate"></i></div>
+            <div class="sys-title">Innovation</div>
+            <div class="sys-sub">Patents • IoT • AI/ML</div>
+            <div class="sys-tags">
+              <span>Granted Patent</span><span>Robotics</span><span>UAV</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="system-note">
+          <div class="mono text-muted-soft">WHY THIS MATTERS</div>
+          <div class="h6 mb-1">I deliver systems, not just features</div>
+          <div class="text-muted-soft">
+            UI craftsmanship + automation + services + deployments + dashboards + patented innovation.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Experience</h2>
+      </div>
+
+      <div class="timeline">
+        <article class="t-item card-glass reveal">
+          <div class="t-dot"></div>
+          <div class="t-content">
+            <div class="d-flex flex-wrap justify-content-between align-items-start gap-2">
+              <div>
+                <h3 class="h5 mb-1">Associate – Lead</h3>
+                <div class="text-muted-soft">Cognizant Technology Services • 2021 – 2023</div>
+              </div>
+              <span class="tag">Angular • Node • Java • Spring Boot • OpenShift</span>
             </div>
 
-            <div class="glass">
-                <h5>Bachelor of Technology – Electronics & Communication Engineering</h5>
-                <p class="text-muted">CMR College of Engineering & Technology | 2016 – 2020</p>
-                <p>
-                    Built strong foundations in electronics, embedded systems, signal processing,
-                    and engineering problem-solving, forming the basis for later work in IoT
-                    and applied technology solutions.
-                </p>
+            <ul class="mt-3 mb-0 bullets">
+              <li><i class="fa-solid fa-check"></i> Led a 3–4 member team; improved sprint velocity by 20%</li>
+              <li><i class="fa-solid fa-check"></i> Built reusable UI modules; reduced load time by 35%</li>
+              <li><i class="fa-solid fa-check"></i> Automated E2E API testing; +85% coverage, -40% defects</li>
+              <li><i class="fa-solid fa-check"></i> Spring Boot microservices + OpenShift monitoring across envs</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="t-item card-glass reveal">
+          <div class="t-dot"></div>
+          <div class="t-content">
+            <div class="d-flex flex-wrap justify-content-between align-items-start gap-2">
+              <div>
+                <h3 class="h5 mb-1">BI Consultant – Lead</h3>
+                <div class="text-muted-soft">La Trobe BI Consulting • 2024 – 2025</div>
+              </div>
+              <span class="tag">Power BI • DAX • ETL</span>
             </div>
 
+            <ul class="mt-3 mb-0 bullets">
+              <li><i class="fa-solid fa-check"></i> Executive dashboards for KPI tracking and decision-making</li>
+              <li><i class="fa-solid fa-check"></i> ETL optimisation reducing refresh time by ~40%</li>
+              <li><i class="fa-solid fa-check"></i> Advanced DAX measures for forecasting and insights</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="t-item card-glass reveal">
+          <div class="t-dot"></div>
+          <div class="t-content">
+            <div class="d-flex flex-wrap justify-content-between align-items-start gap-2">
+              <div>
+                <h3 class="h5 mb-1">Founder & Developer</h3>
+                <div class="text-muted-soft">Innovarian Tech Solutions • 2018 – Present</div>
+              </div>
+              <span class="tag">IoT • AI/ML • Embedded</span>
+            </div>
+
+            <ul class="mt-3 mb-0 bullets">
+              <li><i class="fa-solid fa-check"></i> Built end-to-end systems from device → cloud → dashboards</li>
+              <li><i class="fa-solid fa-check"></i> Innovation projects leading to patents & publications</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS + CASE STUDY DRAWER -->
+  <section id="projects" class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Projects</h2>
+      </div>
+
+      <div class="row g-4">
+        <!-- Project 1 -->
+        <div class="col-lg-6">
+          <div class="project-card reveal">
+            <div class="d-flex align-items-start justify-content-between gap-3">
+              <div>
+                <h3 class="h5 mb-1">UAV Defence Technology System</h3>
+                <p class="text-muted-soft mb-0">AI/ML detection + real-time location transmission for critical scenarios.</p>
+              </div>
+              <span class="badge badge-patent">AI/ML</span>
+            </div>
+
+            <div class="mt-3 chips">
+              <span class="chip">Detection</span>
+              <span class="chip">Tracking</span>
+              <span class="chip">Edge → Cloud</span>
+            </div>
+
+            <div class="project-actions mt-4">
+              <button class="btn btn-primary btn-sm btn-glow" type="button"
+                onclick="openCase('uav')">
+                <i class="fa-solid fa-book-open me-2"></i>Case Study
+              </button>
+              <button class="btn btn-outline-soft btn-sm" type="button" onclick="openCase('uav', true)">
+                <i class="fa-solid fa-diagram-project me-2"></i>Architecture
+              </button>
+            </div>
+          </div>
         </div>
-    </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="reveal">
-        <div class="container text-center">
-            <h2 class="section-title">Contact</h2>
-            <p>Melbourne, VIC | Open to roles & freelance opportunities</p>
-            <p>Email: <strong>nandyalaprudhvi5@gmail.com</strong></p>
-            <p>Let’s build something impactful.</p>
-            <a href="https://wa.me/61426185359" class="btn btn-success btn-lg">
-                <i class="fa-brands fa-whatsapp"></i> WhatsApp
-            </a>
+        <!-- Project 2 -->
+        <div class="col-lg-6">
+          <div class="project-card reveal">
+            <div class="d-flex align-items-start justify-content-between gap-3">
+              <div>
+                <h3 class="h5 mb-1">Voice-Induced Home Modulation</h3>
+                <p class="text-muted-soft mb-0">Voice-driven IoT automation with energy efficiency improvements.</p>
+              </div>
+              <span class="badge badge-patent">IoT</span>
+            </div>
+
+            <div class="mt-3 chips">
+              <span class="chip">Voice</span>
+              <span class="chip">Automation</span>
+              <span class="chip">Embedded</span>
+            </div>
+
+            <div class="project-actions mt-4">
+              <button class="btn btn-primary btn-sm btn-glow" type="button"
+                onclick="openCase('voice')">
+                <i class="fa-solid fa-book-open me-2"></i>Case Study
+              </button>
+              <a class="btn btn-outline-soft btn-sm" href="https://youtu.be/V7yJeV2ZyUM" target="_blank" rel="noopener">
+                <i class="fa-solid fa-play me-2"></i>Demo
+              </a>
+            </div>
+          </div>
         </div>
-    </section>
 
-    <footer>
-        © 2026 N Prudhvi Kumar Reddy
-    </footer>
+        <!-- Project 3 -->
+        <div class="col-lg-6">
+          <div class="project-card reveal">
+            <div class="d-flex align-items-start justify-content-between gap-3">
+              <div>
+                <h3 class="h5 mb-1">Robotic Pen (Speech-Induced Printer)</h3>
+                <p class="text-muted-soft mb-0">Speech → text → robotic writing pipeline with high recognition accuracy.</p>
+              </div>
+              <span class="badge badge-patent">Robotics</span>
+            </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        /* Theme */
-        function toggleTheme() {
-            const h = document.documentElement;
-            h.dataset.theme = h.dataset.theme === "dark" ? "light" : "dark";
-            localStorage.setItem("theme", h.dataset.theme);
+            <div class="mt-3 chips">
+              <span class="chip">Speech</span>
+              <span class="chip">Control</span>
+              <span class="chip">Mechatronics</span>
+            </div>
+
+            <div class="project-actions mt-4">
+              <button class="btn btn-primary btn-sm btn-glow" type="button"
+                onclick="openCase('pen')">
+                <i class="fa-solid fa-book-open me-2"></i>Case Study
+              </button>
+              <button class="btn btn-outline-soft btn-sm" type="button" onclick="openCase('pen', true)">
+                <i class="fa-solid fa-diagram-project me-2"></i>Architecture
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="col-lg-6">
+          <div class="project-card reveal">
+            <div class="d-flex align-items-start justify-content-between gap-3">
+              <div>
+                <h3 class="h5 mb-1">Face Sketch Synthesis Model</h3>
+                <p class="text-muted-soft mb-0">ML approach using sparse representation for sketch synthesis.</p>
+              </div>
+              <span class="badge badge-patent">ML</span>
+            </div>
+
+            <div class="mt-3 chips">
+              <span class="chip">Computer Vision</span>
+              <span class="chip">ML</span>
+              <span class="chip">Research</span>
+            </div>
+
+            <div class="project-actions mt-4">
+              <button class="btn btn-primary btn-sm btn-glow" type="button"
+                onclick="openCase('sketch')">
+                <i class="fa-solid fa-book-open me-2"></i>Case Study
+              </button>
+              <button class="btn btn-outline-soft btn-sm" type="button" onclick="openCase('sketch', true)">
+                <i class="fa-solid fa-diagram-project me-2"></i>Architecture
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-strip card-glass reveal mt-4">
+        <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+          <div>
+            <h3 class="h5 mb-1">Want to build something impactful?</h3>
+            
+          </div>
+          <a class="btn btn-primary btn-glow" href="#contact">Contact Me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PATENTS -->
+  <section id="patents" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Patents & Publications</h2>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="card-glass reveal">
+            <div class="d-flex align-items-start justify-content-between gap-3">
+              <div>
+                <h3 class="h5 mb-1">Granted Patent</h3>
+                <p class="text-muted-soft mb-0">
+                  System and Method to Identify Accurate Location of Explosive Devices
+                </p>
+              </div>
+              <span class="tag">Patent No. 409989</span>
+            </div>
+            <div class="mt-3 chips">
+              <span class="chip">Safety-Critical</span><span class="chip">Embedded</span><span class="chip">Tracking</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card-glass reveal">
+            <h3 class="h5 mb-2">Patent Journal Publications</h3>
+            <ul class="mb-0 bullets">
+              <li><i class="fa-solid fa-book"></i> Voice Induced Home Modulation — 201841045161A</li>
+              <li><i class="fa-solid fa-book"></i> Robotic Pen — 202041038885A</li>
+            </ul>
+            <div class="mt-3 chips">
+              <span class="chip">IoT</span><span class="chip">AI</span><span class="chip">Robotics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section section-alt">
+    <div class="container">
+      <div class="section-head text-center">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-sub text-muted-soft">Roles, collaborations, or freelance — let’s build something impactful.</p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-8">
+          <div class="card-glass reveal">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="contact-item">
+                  <div class="contact-ico"><i class="fa-solid fa-location-dot"></i></div>
+                  <div>
+                    <div class="small text-muted-soft">Location</div>
+                    <div>Melbourne, VIC</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="contact-item">
+                  <div class="contact-ico"><i class="fa-solid fa-envelope"></i></div>
+                  <div>
+                    <div class="small text-muted-soft">Email</div>
+                    <a class="link-soft" href="mailto:nandyalaprudhvi5@gmail.com">nandyalaprudhvi5@gmail.com</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="contact-item">
+                  <div class="contact-ico"><i class="fa-brands fa-whatsapp"></i></div>
+                  <div>
+                    <div class="small text-muted-soft">WhatsApp</div>
+                    <a class="link-soft" href="https://wa.me/61426185359" target="_blank" rel="noopener">Message me</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="contact-item">
+                  <div class="contact-ico"><i class="fa-brands fa-linkedin"></i></div>
+                  <div>
+                    <div class="small text-muted-soft">LinkedIn</div>
+                    <a class="link-soft" href="https://www.linkedin.com/in/nprudhvikumarreddy/" target="_blank" rel="noopener">Open profile</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <hr class="soft-hr my-4" />
+
+            <div class="d-flex flex-wrap gap-2">
+              <a class="btn btn-primary btn-glow" href="./resume.pdf" download>
+                <i class="fa-solid fa-file-arrow-down me-2"></i>Download Resume
+              </a>
+              <button class="btn btn-outline-soft" type="button" onclick="copyEmail()">
+                <i class="fa-regular fa-copy me-2"></i>Copy Email
+              </button>
+              <a class="btn btn-outline-soft" href="#top">
+                Back to top <i class="fa-solid fa-arrow-up ms-2"></i>
+              </a>
+            </div>
+
+            <p class="mt-3 text-muted-soft small mb-0">
+              Tip: press <span class="mono">/</span> to focus the Command Center input.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container d-flex flex-wrap justify-content-center align-items-center gap-2">
+      <div class="text-muted-soft small">© <span id="year"></span> Prudhvi Kumar Reddy Nandyala</div>
+    </div>
+  </footer>
+
+  <!-- CASE STUDY DRAWER -->
+  <div class="drawer-backdrop" id="drawerBackdrop" onclick="closeCase()" aria-hidden="true"></div>
+
+  <aside class="case-drawer" id="caseDrawer" aria-hidden="true" aria-label="Case Study Drawer" role="dialog">
+    <div class="drawer-header">
+      <div>
+        <div class="drawer-kicker mono" id="drawerKicker">CASE STUDY</div>
+        <h3 class="drawer-title" id="drawerTitle">Project Title</h3>
+        <div class="drawer-sub text-muted-soft" id="drawerSub">Short description</div>
+      </div>
+      <button class="drawer-close" type="button" onclick="closeCase()" aria-label="Close case study">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="drawer-body">
+      <div class="drawer-section">
+        <div class="drawer-section-title">Architecture</div>
+        <ul class="drawer-list" id="drawerArchitecture"></ul>
+      </div>
+
+      <div class="drawer-section">
+        <div class="drawer-section-title">Key Decisions</div>
+        <ul class="drawer-list" id="drawerDecisions"></ul>
+      </div>
+
+      <div class="drawer-section">
+        <div class="drawer-section-title">Impact</div>
+        <div class="drawer-metrics" id="drawerMetrics"></div>
+      </div>
+
+      <div class="drawer-section">
+        <div class="drawer-section-title">Tech Stack</div>
+        <div class="drawer-chips" id="drawerStack"></div>
+      </div>
+
+      <div class="drawer-cta">
+        <a class="btn btn-primary btn-glow w-100" href="#contact" onclick="closeCase()">
+          <i class="fa-solid fa-paper-plane me-2"></i>Contact about this project
+        </a>
+        <a class="btn btn-outline-soft w-100 mt-2" href="./resume.pdf" download>
+          <i class="fa-solid fa-file-arrow-down me-2"></i>Download Resume
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // ===== Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // ===== Theme
+    function setTheme(mode) {
+      document.documentElement.dataset.theme = mode;
+      localStorage.setItem("theme", mode);
+      document.getElementById("themeIcon").textContent = mode === "dark" ? "🌗" : "☀️";
+    }
+    function toggleTheme() {
+      const current = document.documentElement.dataset.theme || "dark";
+      setTheme(current === "dark" ? "light" : "dark");
+    }
+    setTheme(localStorage.getItem("theme") || "dark");
+
+    // ===== Copy email
+    function copyEmail() {
+      const email = "nandyalaprudhvi5@gmail.com";
+      navigator.clipboard.writeText(email).then(() => {
+        const el = document.getElementById("copyToast");
+        el.textContent = "Copied email to clipboard ✅";
+        setTimeout(() => el.textContent = "", 2500);
+      }).catch(() => {
+        const el = document.getElementById("copyToast");
+        el.textContent = "Copy failed — please copy manually.";
+        setTimeout(() => el.textContent = "", 2500);
+      });
+    }
+
+    // ===== Reveal
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add("active"), i * 90);
+          obs.unobserve(e.target);
         }
-        document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark";
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach(el => obs.observe(el));
 
-        /* Scroll Reveal */
-        const obs = new IntersectionObserver(e => {
-            e.forEach((x, i) => {
-                if (x.isIntersecting) {
-                    setTimeout(() => x.target.classList.add("active"), i * 120);
-                }
-            });
-        }, { threshold: .15 });
-        document.querySelectorAll(".reveal,.glass").forEach(el => obs.observe(el));
-    </script>
+    // ===== Terminal Engine
+    const terminalBody = document.getElementById("terminalBody");
+    const terminalCmd = document.getElementById("terminalCmd");
 
+    const RESPONSES = {
+      help: () => [
+        line("Available commands:", "hint"),
+        line("whoami • skills • experience • patents • projects • contact • clear", "hint"),
+        line("Tip: press '/' to focus input.", "muted")
+      ],
+      whoami: () => [
+        line("Prudhvi Kumar Reddy Nandyala", "ok"),
+        line("Software Engineer • BI • IoT/AI • Patent Holder", "muted"),
+        line("Focus: performance, accessibility, scalable systems, analytics.", "muted")
+      ],
+      skills: () => [
+        line("Frontend:", "ok"),
+        line("Angular, TypeScript, Bootstrap, Accessibility (WCAG-aware)", "muted"),
+        line("Backend & Services:", "ok"),
+        line("Node.js, Java, Spring Boot, REST APIs, Microservices", "muted"),
+        line("Data & BI:", "ok"),
+        line("Power BI, DAX, ETL, KPI dashboards, MySQL, MongoDB", "muted"),
+        line("DevOps & Tools:", "ok"),
+        line("GitLab CI/CD, OpenShift, Postman, Cypress", "muted")
+      ],
+      experience: () => [
+        line("Cognizant — Associate/Lead (2021–2023)", "ok"),
+        line("• Led 3–4 devs • Angular modules • E2E automation • OpenShift exposure", "muted"),
+        line("La Trobe — BI Consultant/Lead (2024–2025)", "ok"),
+        line("• Power BI dashboards • ETL optimisation • DAX forecasting/KPIs", "muted"),
+        line("Innovarian — Founder (2018–Present)", "ok"),
+        line("• IoT/AI projects • Patents/publications • End-to-end systems", "muted")
+      ],
+      patents: () => [
+        line("Granted Patent:", "ok"),
+        line("• Patent No. 409989 — Accurate location identification of explosive devices", "muted"),
+        line("Publications:", "ok"),
+        line("• 201841045161A — Voice-induced home modulation", "muted"),
+        line("• 202041038885A — Robotic pen", "muted")
+      ],
+      projects: () => [
+        line("Projects (use Case Study buttons below for details):", "ok"),
+        line("• UAV Defence Technology System", "muted"),
+        line("• Voice-Induced Home Modulation", "muted"),
+        line("• Robotic Pen (Speech-Induced Printer)", "muted"),
+        line("• Face Sketch Synthesis Model", "muted")
+      ],
+      contact: () => [
+        line("Email: nandyalaprudhvi5@gmail.com", "muted"),
+        line("LinkedIn: /in/nprudhvikumarreddy", "muted"),
+        line("Resume: ./resume.pdf", "muted")
+      ]
+    };
+
+    function escapeHtml(str){
+      return str.replace(/[&<>"']/g, m => ({
+        "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+      })[m]);
+    }
+    function line(text, type=""){
+      const cls = type ? `t-${type}` : "";
+      return `<div class="t-line ${cls}">${escapeHtml(text)}</div>`;
+    }
+    function printCmd(cmd){
+      terminalBody.insertAdjacentHTML(
+        "beforeend",
+        `<div class="t-line t-cmd"><span class="mono">❯</span> ${escapeHtml(cmd)}</div>`
+      );
+      terminalBody.scrollTop = terminalBody.scrollHeight;
+    }
+    function printOut(lines){
+      terminalBody.insertAdjacentHTML("beforeend", lines.join(""));
+      terminalBody.scrollTop = terminalBody.scrollHeight;
+    }
+    function terminalRun(raw){
+      const cmd = (raw || "").trim().toLowerCase();
+      if (!cmd) return;
+
+      printCmd(cmd);
+
+      if (cmd === "clear"){
+        clearTerminal();
+        return;
+      }
+      const fn = RESPONSES[cmd];
+      if (fn) printOut(fn());
+      else printOut([ line(`Unknown command: ${cmd}`, "bad"), line("Try: help", "hint") ]);
+    }
+    function handleCommand(){
+      const cmd = terminalCmd.value;
+      terminalCmd.value = "";
+      terminalRun(cmd);
+    }
+    function clearTerminal(){
+      terminalBody.innerHTML = "";
+      printOut([ line("Welcome to the Command Center.", "ok"), line("Type: help", "hint") ]);
+    }
+    clearTerminal();
+
+    // Press "/" to focus input
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "/" && document.activeElement !== terminalCmd) {
+        e.preventDefault();
+        terminalCmd.focus();
+      }
+      if (e.key === "Escape") closeCase();
+    });
+
+    // ===== Case Study Drawer data
+    const CASES = {
+      uav: {
+        kicker: "CASE STUDY • AI/ML + UAV",
+        title: "UAV Defence Technology System",
+        sub: "AI/ML detection + real-time location transmission for critical scenarios.",
+        architecture: [
+          "Input pipeline: sensor/camera feed → preprocessing → detection model",
+          "Decision layer: classification + confidence thresholding",
+          "Tracking: location extraction + transmission module",
+          "Output: dashboard/alerts for operator decision support"
+        ],
+        decisions: [
+          "Optimised for fast inference to support near real-time decisions",
+          "Used modular pipeline stages for testability and tuning",
+          "Separated detection vs transmission modules to isolate failures"
+        ],
+        metrics: [
+          { k: "Detection accuracy", v: "~95%" },
+          { k: "Latency focus", v: "Near real-time" },
+          { k: "Outcome", v: "Actionable alerts + location" }
+        ],
+        stack: ["AI/ML", "Computer Vision", "Edge → Cloud", "Telemetry", "Dashboard/Alerts"]
+      },
+      voice: {
+        kicker: "CASE STUDY • IoT Automation",
+        title: "Voice-Induced Home Modulation",
+        sub: "Voice-driven IoT automation using transmission + relays for control.",
+        architecture: [
+          "Voice input → command parsing → control signal generation",
+          "Transmission layer → receiver module → relay switching",
+          "Device control: appliances managed via relay logic",
+          "Monitoring: power/usage insights (optional logging)"
+        ],
+        decisions: [
+          "Designed for reliable control flow (command → actuation)",
+          "Kept hardware control logic deterministic for safety",
+          "Modular components: speech layer independent from actuation"
+        ],
+        metrics: [
+          { k: "Energy efficiency", v: "~35%" },
+          { k: "Reliability", v: "Deterministic control" },
+          { k: "Value", v: "Automation + convenience" }
+        ],
+        stack: ["IoT", "Embedded", "Voice Commands", "Relays", "Automation"]
+      },
+      pen: {
+        kicker: "CASE STUDY • Robotics + Speech",
+        title: "Robotic Pen (Speech-Induced Printer)",
+        sub: "Speech → text → motion pipeline for robotic writing/printing.",
+        architecture: [
+          "Speech capture → speech-to-text conversion",
+          "Text processing → character path planning",
+          "Motion controller → actuator commands",
+          "Execution: pen movement + calibration loop"
+        ],
+        decisions: [
+          "Used calibration to improve writing accuracy over time",
+          "Separated recognition from motion planning for clarity",
+          "Designed path planning to reduce jitter and overshoot"
+        ],
+        metrics: [
+          { k: "Recognition accuracy", v: "~98%" },
+          { k: "System", v: "Speech → Motion" },
+          { k: "Outcome", v: "Readable printed output" }
+        ],
+        stack: ["Speech", "Robotics", "Motion Control", "Path Planning", "Embedded"]
+      },
+      sketch: {
+        kicker: "CASE STUDY • ML Research",
+        title: "Face Sketch Synthesis Model",
+        sub: "Sparse representation approach for face sketch synthesis.",
+        architecture: [
+          "Dataset preprocessing → feature extraction",
+          "Sparse representation model training",
+          "Inference: face input → sketch output generation",
+          "Evaluation: accuracy scoring + test datasets"
+        ],
+        decisions: [
+          "Focused on generalisation across datasets",
+          "Separated preprocessing from model core for repeatability",
+          "Used evaluation metrics to validate improvements consistently"
+        ],
+        metrics: [
+          { k: "Accuracy", v: "~92%" },
+          { k: "Approach", v: "Sparse representation" },
+          { k: "Focus", v: "Generalisation" }
+        ],
+        stack: ["Machine Learning", "Computer Vision", "Feature Engineering", "Evaluation"]
+      }
+    };
+
+    // ===== Case Study Drawer functions
+    const drawer = document.getElementById("caseDrawer");
+    const backdrop = document.getElementById("drawerBackdrop");
+
+    const drawerKicker = document.getElementById("drawerKicker");
+    const drawerTitle = document.getElementById("drawerTitle");
+    const drawerSub = document.getElementById("drawerSub");
+    const drawerArchitecture = document.getElementById("drawerArchitecture");
+    const drawerDecisions = document.getElementById("drawerDecisions");
+    const drawerMetrics = document.getElementById("drawerMetrics");
+    const drawerStack = document.getElementById("drawerStack");
+
+    function openCase(key, focusArchitecture=false){
+      const data = CASES[key];
+      if (!data) return;
+
+      drawerKicker.textContent = data.kicker;
+      drawerTitle.textContent = data.title;
+      drawerSub.textContent = data.sub;
+
+      drawerArchitecture.innerHTML = data.architecture.map(x => `<li>${escapeHtml(x)}</li>`).join("");
+      drawerDecisions.innerHTML = data.decisions.map(x => `<li>${escapeHtml(x)}</li>`).join("");
+
+      drawerMetrics.innerHTML = data.metrics.map(m => `
+        <div class="drawer-metric">
+          <div class="k">${escapeHtml(m.k)}</div>
+          <div class="v">${escapeHtml(m.v)}</div>
+        </div>
+      `).join("");
+
+      drawerStack.innerHTML = data.stack.map(s => `<span class="chip">${escapeHtml(s)}</span>`).join("");
+
+      backdrop.classList.add("show");
+      drawer.classList.add("open");
+      drawer.setAttribute("aria-hidden", "false");
+
+      // Trap-ish: focus close button
+      setTimeout(() => {
+        const closeBtn = drawer.querySelector(".drawer-close");
+        closeBtn?.focus();
+      }, 50);
+    }
+
+    function closeCase(){
+      drawer.classList.remove("open");
+      backdrop.classList.remove("show");
+      drawer.setAttribute("aria-hidden", "true");
+    }
+  </script>
 </body>
-
 </html>
