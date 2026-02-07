@@ -1008,3 +1008,8 @@ body{
   box-shadow: 0 0 0 6px rgba(56,189,248,.10);
   border-color: rgba(56,189,248,.45);
 }
+
+#focusLine{
+  transition: opacity .25s ease, transform .25s ease;
+  min-height: 1.4em;
+}
