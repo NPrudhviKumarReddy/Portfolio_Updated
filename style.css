@@ -1013,3 +1013,7 @@ body{
   transition: opacity .25s ease, transform .25s ease;
   min-height: 1.4em;
 }
+
+@media (max-width: 991px){
+  .system-grid-2{ grid-template-columns: 1fr; }
+}
