@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.nprudhvikumarreddy.com/sitemap.xml
+
